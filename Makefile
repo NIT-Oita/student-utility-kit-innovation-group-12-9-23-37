@@ -26,3 +26,6 @@ $(OBJS): $(OBJ_DIR)/%.o: %.c
 
 $(OBJS): calc.h
 
+clean:
+	@if exist $(OBJ_DIR) rmdir/S/Q $(OBJ_DIR)
+	@if exist $(BIN_DIR) rmdir/S/Q $(BIN_DIR)
