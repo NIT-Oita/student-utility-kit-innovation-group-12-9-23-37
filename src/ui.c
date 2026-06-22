@@ -28,17 +28,18 @@ int tanni_ui(){
 int jumyou_ui(char kyouka[],double kesseki,double tanni){
     //instorage(kyoka,);
     double nokori_jumyou = jumyou(kyouka,kesseki,tanni);
-    printf("現在の欠席可能日数は ” %.1f 日 ” です。\n",(nokori_jumyou) / tanni);
+    printf("現在の欠席可能日数は ” %.1f コマ ” です。\n",nokori_jumyou);
     tannikazu = nokori_jumyou;
     return 0;
 }
 
-int kakuninn_ui(double a){
+int kakuninn_ui(char b[],double a){
     char kakunin;
     printf("今日は学校に行きましたか？(y/n):\n");
     scanf(" %c",&kakunin);
     if(kakunin != 'y'){
-        tannikazu -= a;
+        tannikazu --;
+        instorage(b,1);
     }
     END_ui(tannikazu);
     return 0;

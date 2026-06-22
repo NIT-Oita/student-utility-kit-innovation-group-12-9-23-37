@@ -25,7 +25,7 @@ int main(){
 
     jumyou_ui(kyouka,kesseki,tanni);
 
-    kakuninn_ui(tanni);
+    kakuninn_ui(kyouka,tanni);
 
     return 0;
 }
