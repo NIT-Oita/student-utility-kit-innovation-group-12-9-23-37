@@ -3,32 +3,29 @@
 #include "ui.h"
 #include "logic.h"
 
+double tannikazu = 0;
 
 int main(){
     char kyouka[100];
-    double kesseki; 
+    double kesseki;
     double tanni;
 
 
-    int aisatu_ui();
-    int kyouka_ui();
+    aisatu_ui();
+    kyouka_ui();
     scanf_s("%s",&kyouka,100);
 
 
-    int kesseki_ui();
-    scanf("%.f",&kesseki);
+    kesseki_ui();
+    scanf("%lf", &kesseki);
 
 
-    int tanni_ui();
-    scanf("%.f",&tanni);
-    
+    tanni_ui();
+    scanf("%lf",&tanni);
 
-    int jumyou_ui(kyouka,kesseki,tanni);
+    jumyou_ui(kyouka,kesseki,tanni);
 
+    kakuninn_ui(tanni);
 
-    int kakuninn_ui();
-
-
-    int END_ui();
     return 0;
 }

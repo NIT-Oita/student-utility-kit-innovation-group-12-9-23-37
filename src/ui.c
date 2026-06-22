@@ -2,7 +2,7 @@
 #include "logic.h"
 #include <stdio.h>
 
-int aisatu(){
+int aisatu_ui(){
     printf("これはあなたの履修する授業を管理するシステムです。\n");
     return 0;
 }
@@ -25,18 +25,30 @@ int tanni_ui(){
     return 0;
 }
 
-int jumyou_ui(char kyouka[],int kesseki,int tanni){
-
-    printf("現在の欠席可能日数は ” %.f 日 ” です。\n",jumyou(kyouka,tanni,kesseki));
+int jumyou_ui(char kyouka[],double kesseki,double tanni){
+    //instorage(kyoka,);
+    double nokori_jumyou = jumyou(kyouka,kesseki,tanni);
+    printf("現在の欠席可能日数は ” %.1f 日 ” です。\n",(nokori_jumyou) / tanni);
+    tannikazu = nokori_jumyou;
     return 0;
 }
 
-int kakuninn(){
-    printf("今日は学校に行きましたか？\n");
+int kakuninn_ui(double a){
+    char kakunin;
+    printf("今日は学校に行きましたか？(y/n):\n");
+    scanf(" %c",&kakunin);
+    if(kakunin != 'y'){
+        tannikazu -= a;
+    }
+    END_ui(tannikazu);
     return 0;
 }
 
-int END_ui(){
-    printf("You are Die...");
+int END_ui(double a){
+    if(a >= 0){
+        printf("You Survive!");
+    }else{
+        printf("You are Die...");
+    }
     return 0;
 }

@@ -5,8 +5,10 @@ int aisatu_ui();
 int kyouka_ui();
 int kesseki_ui();
 int tanni_ui();
-int jumyou_ui(char kyouka[],int kesseki,int tanni);
-int kakuninn_ui();
-int END_ui();
+int jumyou_ui(char kyouka[],double kesseki,double tanni);
+int kakuninn_ui(double a);
+int END_ui(double a);
+extern double tannikazu;//ui.cでjumyou_uiとkakunin_uiで進級が出来るかどうかを判別するかどうかのフラッグとしての変数。
+
 
 #endif

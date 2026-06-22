@@ -1,8 +1,8 @@
 #ifndef LOGIC_H
 #define LOGIC_H
 
-int instorage(char name[]);
-int outstorage(char name[]);
-double jumyou(char name[],int kake,int tanni);
+int instorage(char name[],double b);
+double outstorage(char name[]);
+double jumyou(char a[],double b,double c);
 
 #endif
