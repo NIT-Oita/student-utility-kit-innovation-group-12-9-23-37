@@ -9,11 +9,10 @@
 
 ## 1. プロジェクト概要
 
-学校生活の中にある「身近な不便」を1つ選び、**C言語・Makefile・Git** を活用して解決するコマンドラインツールを3人1組で開発する。
+授業の出席コマ数を計算して管理するシステム．
 
 - 期間: 3週間
-- 班構成: 3名
-- 評価: 100点満点
+- 班構成: 光野、篠原、江藤
 
 ---
 
@@ -36,9 +35,9 @@
 
 | メンバー | 役割 | 担当ファイル |
 |---|---|---|
-| **A** | メインロジック（計算・判定） | `logic.c` `logic.h` |
-| **B** | データ管理（ファイルI/O） | `storage.c` `storage.h` |
-| **C** | UI（メニュー・入力チェック） | `ui.c` `main.c` |
+| 篠原 | メインロジック（計算・判定） | `logic.c` `logic.h` |
+| 光野 | データ管理（ファイルI/O） | `storage.c` `storage.h` |
+| 江藤 | UI（メニュー・入力チェック） | `ui.c` `main.c` |
 
 全員がGitで互いのプルリクエストをレビュー。
 
@@ -58,24 +57,14 @@
 ```bash
 pacman -S mingw-w64-x86_64-gcc make
 ```
-
-**macOS**
-```bash
-xcode-select --install
-```
-
-**Linux (Ubuntu)**
-```bash
-sudo apt install build-essential
-```
-
 ### ビルドと実行
 
 ```bash
-git clone https://github.com/<your-account>/<your-repo>.git
-cd <your-repo>
-make          # コンパイル
-./taskman     # 実行（Windowsは taskman.exe）
+git clone https://github.com/NIT-Oita/student-utility-kit-innovation-group-12-9-23-37.git
+cd student-utility-kit-innovation-group-12-9-23-37.git
+make      # コンパイル
+cd bin    
+program.exe     # 実行（Windowsは taskman.exe）
 ```
 
 ### Makefile ターゲット
@@ -83,9 +72,7 @@ make          # コンパイル
 | コマンド | 動作 |
 |---|---|
 | `make` | コンパイル＆リンク |
-| `make run` | ビルドして実行 |
 | `make clean` | 中間ファイルを削除 |
-| `make zip` | 提出用ZIPを作成 |
 
 ---
 
@@ -100,22 +87,24 @@ your-project/
 │   ├── main.c
 │   ├── ui.c   ui.h
 │   ├── logic.c logic.h
-│   └── storage.c
-├── data/
-│   └── tasks.csv
-└── tests/
-    └── test_xxx.c
+│   ├─── storage.c
+│   └── data.csv
+└── data/
+    └── tasks.csv
+
 ```
 
 ---
 
 ## 6. データ形式（例）
 
-`data/tasks.csv` の形式（自分のプロジェクトに合わせて書き換える）:
+`data.csv` の形式:
 
-```csv
-id,title,deadline,priority,done
-1,Math homework,2026-05-13,5,0
+```data
+a,1.0
+国語,3.0
+rty,2.0
+
 ```
 
 ---
@@ -124,29 +113,21 @@ id,title,deadline,priority,done
 
 ```bash
 git pull origin main                    # 最新を取得
-git checkout -b feat/<feature-name>     # 機能ごとにブランチ
+git checkout -b （uif等）     # 機能ごとにブランチ
 # ... コード変更 ...
-git commit -m "add: <意味のあるメッセージ>"
-git push -u origin feat/<feature-name>  # PR作成 → レビュー → マージ
+git commit -m "ver 1.21"
+git push  # PR作成 → レビュー → マージ
 ```
-
-main ブランチには直接 push しない。
 
 ---
 
 ## 8. テストチェックリスト
 
-- [ ] 負の数値や0を入力しても落ちない
-- [ ] 空入力（Enterのみ）を処理できる
-- [ ] 不正な日付（例: `2026/13/40`）を検出
-- [ ] データファイルが無い場合に新規作成
-- [ ] 壊れたデータ行を無視・警告
-- [ ] 上限を超えた入力を拒否
-
-推奨コンパイルオプション:
-```bash
-gcc -Wall -Wextra -fsanitize=address ...
-```
+- [●] 負の数値や0を入力しても落ちない
+- [●] 空入力（Enterのみ）を処理できる
+- [●] データファイルが無い場合に新規作成
+- [●] 壊れたデータ行を無視・警告
+- [●] すでに手遅れな教科は単位数入力の後拒否
 
 ---
 
@@ -169,13 +150,11 @@ gcc -Wall -Wextra -fsanitize=address ...
 
 ## 10. メンバー / Members
 
-> **編集してください** — Edit this section
+- ** メンバー A ** — 光野悠斗 (s2538) — `s2538@oita-kosen.ac-jp`
+- ** メンバー B ** — 篠原空馳 (s2523) — `s2523@oita-kosen.ac-jp`
+- ** メンバー C ** — 江藤はる (s2509) — `s2509@oita-kosen.ac-jp`
 
-- **メンバー A** — 氏名 (学籍番号) — `email@example.com`
-- **メンバー B** — 氏名 (学籍番号) — `email@example.com`
-- **メンバー C** — 氏名 (学籍番号) — `email@example.com`
-
-班番号: **Group ## (要記入)**
+班番号: ** Group 12 **
 
 ---
 
