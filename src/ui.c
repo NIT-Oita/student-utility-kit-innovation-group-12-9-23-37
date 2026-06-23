@@ -15,7 +15,7 @@ int kyouka_ui(){
 
 
 int kesseki_ui(){
-    printf("欠席日数を入力してください:");
+    printf("欠席コマ数を入力してください:");
     return 0;
 }
 
@@ -28,7 +28,7 @@ int tanni_ui(){
 int jumyou_ui(char kyouka[],double kesseki,double tanni){
     //instorage(kyoka,);
     double nokori_jumyou = jumyou(kyouka,kesseki,tanni);
-    printf("現在の欠席可能日数は ” %.1f コマ ” です。\n",nokori_jumyou);
+    printf("現在の欠席可能コマ数は ” %.1f コマ ” です。\n",nokori_jumyou);
     tannikazu = nokori_jumyou;
     return 0;
 }
