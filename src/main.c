@@ -15,7 +15,7 @@ int main(){
     kyouka_ui();
     scanf_s("%s",&kyouka,100);
 
-    tanni_ui();
+    tannigit _ui();
     scanf("%lf",&tanni);
 
     if(jumyou(kyouka,0,tanni)<0){
