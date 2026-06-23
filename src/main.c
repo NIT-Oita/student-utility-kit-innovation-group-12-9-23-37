@@ -15,12 +15,16 @@ int main(){
     kyouka_ui();
     scanf_s("%s",&kyouka,100);
 
-    kesseki_ui();
-    scanf("%lf", &kesseki);
-
-
     tanni_ui();
     scanf("%lf",&tanni);
+
+    if(jumyou(kyouka,0,tanni)<0){
+        teokure();
+        return 0;
+    }
+
+    kesseki_ui();
+    scanf("%lf", &kesseki);
 
     kakuninn_ui(kyouka,tanni);
 

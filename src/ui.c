@@ -45,6 +45,11 @@ int kakuninn_ui(char b[],double a){
     return 0;
 }
 
+int teokure(){
+    printf("手遅れだっぴね～");
+    return 0;
+}
+
 int END_ui(double a){
     if(a >= 0){
         printf("You Survive!");
