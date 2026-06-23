@@ -30,6 +30,7 @@ int jumyou_ui(char kyouka[],double kesseki,double tanni){
     double nokori_jumyou = jumyou(kyouka,kesseki,tanni);
     printf("現在の欠席可能コマ数は ” %.1f コマ ” です。\n",nokori_jumyou);
     tannikazu = nokori_jumyou;
+    END_ui(tannikazu);
     return 0;
 }
 
@@ -41,7 +42,6 @@ int kakuninn_ui(char b[],double a){
         tannikazu --;
         instorage(b,1);
     }
-    END_ui(tannikazu);
     return 0;
 }
 

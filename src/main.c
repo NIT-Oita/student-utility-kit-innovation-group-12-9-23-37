@@ -15,7 +15,6 @@ int main(){
     kyouka_ui();
     scanf_s("%s",&kyouka,100);
 
-
     kesseki_ui();
     scanf("%lf", &kesseki);
 
@@ -23,9 +22,11 @@ int main(){
     tanni_ui();
     scanf("%lf",&tanni);
 
+    kakuninn_ui(kyouka,tanni);
+
     jumyou_ui(kyouka,kesseki,tanni);
 
-    kakuninn_ui(kyouka,tanni);
+    
 
     return 0;
 }
